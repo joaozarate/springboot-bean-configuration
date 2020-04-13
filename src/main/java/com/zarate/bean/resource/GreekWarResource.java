@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zarate.bean.kingdom.Kingdom;
 import com.zarate.bean.service.GreekWarService;
+import com.zarate.bean.service.Supply;
 
 @Controller
 public class GreekWarResource {
@@ -18,6 +19,9 @@ public class GreekWarResource {
 
 	@Autowired
 	private List<Kingdom> kingdoms;
+	
+	@Autowired
+	private Supply primary;
 
 	@GetMapping("/war")
 	@ResponseBody
@@ -37,6 +41,12 @@ public class GreekWarResource {
 			System.out.println(kingdom.getName());
 		}
 
+	}
+	
+	@GetMapping("/primary")
+	@ResponseBody
+	public void primary() {
+		System.out.println(primary);
 	}
 
 }

@@ -1,9 +1,9 @@
 package com.zarate.bean.service;
 
-public class TroopsService {
+public class TroopsService implements Supply {
 
 	private Integer army;
-	
+
 	private Integer navy;
 
 	public void setArmy(Integer army) {
@@ -21,7 +21,5 @@ public class TroopsService {
 	public Integer getNavy() {
 		return navy;
 	}
-	
-	
-	
+
 }

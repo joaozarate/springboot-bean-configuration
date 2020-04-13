@@ -1,6 +1,6 @@
 package com.zarate.bean.service;
 
-public class FoodService {
+public class FoodService implements Supply {
 
 	private Integer meat;
 	
