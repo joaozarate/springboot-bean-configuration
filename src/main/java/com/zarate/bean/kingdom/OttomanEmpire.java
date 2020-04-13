@@ -6,7 +6,9 @@ import org.springframework.stereotype.Component;
 import com.zarate.bean.service.FoodService;
 
 @Component
-public class OttomanEmpire {
+public class OttomanEmpire implements Kingdom {
+	
+	private String name = "Ottoman Empire";
 
 	@Autowired(required = false)
 	private FoodService service;
@@ -20,6 +22,11 @@ public class OttomanEmpire {
 			System.out.println("I don't need food.");
 		}
 
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
 	}
 
 }

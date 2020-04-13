@@ -6,7 +6,9 @@ import org.springframework.stereotype.Component;
 import com.zarate.bean.service.TroopsService;
 
 @Component
-public class KingdomFrance {
+public class KingdomFrance implements Kingdom {
+	
+	private String name = "Kingdom of France";
 
 	private TroopsService troops;
 
@@ -29,6 +31,11 @@ public class KingdomFrance {
 		this.troops = troops;
 		System.out.printf("Kingdom of France's Size of the army: %s\n", this.troops.getArmy());
 		System.out.printf("Kingdom of France's Size of the navy: %s\n", this.troops.getNavy());
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
 	}
 
 }

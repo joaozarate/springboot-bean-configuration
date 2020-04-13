@@ -6,7 +6,9 @@ import org.springframework.stereotype.Component;
 import com.zarate.bean.service.TroopsService;
 
 @Component
-public class RussianEmpire {
+public class RussianEmpire implements Kingdom {
+	
+	private String name = "Russian Empire";
 
 	private TroopsService troops;
 
@@ -21,6 +23,11 @@ public class RussianEmpire {
 	 * This exception will be throw if you put two constructors with our @Autowired*/
 	public RussianEmpire(String message) {
 		System.out.println(message);
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
 	}
 
 }

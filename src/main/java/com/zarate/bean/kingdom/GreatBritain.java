@@ -5,7 +5,9 @@ import org.springframework.stereotype.Component;
 import com.zarate.bean.service.TroopsService;
 
 @Component
-public class GreatBritain {
+public class GreatBritain implements Kingdom {
+	
+	private String name = "Great Britain";
 
 	private TroopsService troops;
 
@@ -23,6 +25,11 @@ public class GreatBritain {
 	
 	public GreatBritain() {
 		System.out.println("Great Britain forgot your troops");
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
 	}
 
 }
